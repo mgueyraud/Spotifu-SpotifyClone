@@ -3,6 +3,8 @@
 const { src, dest, series, watch } = require("gulp");
 const sass = require("gulp-sass");
 const autoprefixer = require("gulp-autoprefixer");
+const babel = require('gulp-babel');
+const terser = require('gulp-terser');
 const uglify = require("gulp-uglify");
 const rename = require("gulp-rename");
 const browserSync = require("browser-sync").create(); //For the scaffolding
@@ -24,6 +26,10 @@ const paths = {
 
 const compileJS = () => {
     return src(paths.JS.src)
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+        .pipe(terser())
         .pipe(uglify())
         .pipe(rename({
             suffix: ".min"
