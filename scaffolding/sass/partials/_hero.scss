@@ -1,17 +1,43 @@
-.hero{
+.hero {
     position: relative;
-    
     height: 60vh;
-
-    &__bg{
-        background-image: linear-gradient(to bottom, rgba(47, 47, 47, 0) 0%, #171717 100%), url(/assets/img/placeholders/placeholder-cover-hero.png);    
+    &__content {
+        position: absolute;
+        z-index: 2;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        transition: all .4s;
+    }
+    &__content.scroll {
+        top: 50%;
+        left: 50rem;
+        text-align: left;
+        z-index: 1;
+    }
+    &__content p {
+        line-height: 2.2rem;
+        font-size: 1.4rem;
+        color: $white-color;
+    }
+    &__bg {
         width: calc(100% + 6.4rem);
         background-repeat: no-repeat;
-        height: 100%;
+        height: calc(100% + 6.4rem);
         background-size: cover;
         position: absolute;
         top: -6.4rem;
         left: -3.2rem;
         z-index: 1;
+        transition: all .4s;
+    }
+    &__bg.scroll {
+        left: 0%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 31.2rem;
+        height: 18.3rem;
+        background-image: url(/assets/img/placeholders/placeholder-cover-hero.png);
     }
 }

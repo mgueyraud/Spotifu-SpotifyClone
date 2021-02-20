@@ -1,0 +1,16 @@
+.btn {
+    font-family: $avenir-medium;
+    font-size: 1.4rem;
+    border: none;
+    outline: none;
+    line-height: 1.6rem;
+    padding: .8rem 3.2rem;
+    text-transform: uppercase;
+    border-radius: 7rem;
+    text-decoration: none;
+    cursor: pointer;
+    color: $white-color;
+    &--primary {
+        background-color: $primary-color;
+    }
+}

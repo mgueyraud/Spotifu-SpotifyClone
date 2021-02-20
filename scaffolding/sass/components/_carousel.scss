@@ -41,6 +41,9 @@
         display: flex;
         max-width: 100%;
         overflow-x: scroll;
+        /*Hide scroll bar*/
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none; /*Firefox*/
         
         & > *{
             margin-right: 1.6rem;
@@ -50,5 +53,9 @@
             flex: 0 0 auto;
             flex-flow: row wrap;
         }
+    }
+
+    &__content::-webkit-scrollbar {
+        display: none; /*Chrome */
     }
 }

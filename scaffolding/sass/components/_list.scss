@@ -1,21 +1,30 @@
-.list-wrapper{
+.list-wrapper {
     color: $grey-color;
     overflow-y: auto;
-
-    h4{
+    scrollbar-width: thin;
+    scrollbar-color: $grey-color transparent;
+    &::-webkit-scrollbar {
+        width: .8rem;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $grey-color;
+        border-radius: 6px;
+        border: 3px solid transparent;
+    }
+    h4 {
         font-family: $avenir-roman;
         font-size: 1.4rem;
     }
-
-    .list{
+    .list {
         list-style: none;
     }
-
-    .list li{
+    .list li {
         margin: 0.8rem 0;
     }
-
-    .list li a{
+    .list li a {
         text-decoration: none;
         color: inherit;
         font-family: $avenir-black;

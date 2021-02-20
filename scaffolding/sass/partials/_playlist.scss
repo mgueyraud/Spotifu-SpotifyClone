@@ -1,0 +1,61 @@
+.playlist {
+    width: 100%;
+    font-size: 1.4rem;
+    td {
+        padding: 1.6rem 0;
+    }
+    tr {
+        border-bottom: 1px solid rgba($color: $grey-color, $alpha: 0.08);
+    }
+    th {
+        padding-bottom: 0.5rem;
+    }
+    thead {
+        text-align: left;
+        text-transform: uppercase;
+        line-height: 2.2rem;
+        color: $grey-color;
+    }
+    thead .play {
+        width: 4rem;
+    }
+    &__music {
+        //Hack porque tr no acepta position relative
+        //https://stackoverflow.com/questions/8501727/table-row-wont-contain-elements-with-positionabsolute
+        // transform: scale(1);
+        & td:first-child:before {
+            content: "";
+            position: absolute;
+            opacity: 0;
+            background-color: #282828;
+            top: 0;
+            left: -3.2rem;
+            width: 100vw;
+            height: 100%;
+            z-index: -1;
+        }
+        &:hover td:first-child:before {
+            opacity: 1;
+        }
+        cursor: pointer;
+        td {
+            color: $white-color;
+            vertical-align: middle;
+            position: relative;
+        }
+        .-title {
+            display: flex;
+            align-items: center;
+        }
+        .-like {
+            width: 2.4rem;
+            margin-right: 1.6rem;
+        }
+        .-play img {
+            width: 2.4rem;
+        }
+        .-dark {
+            color: $grey-color;
+        }
+    }
+}
