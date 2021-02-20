@@ -1,0 +1,87 @@
+.player{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &-wrapper{
+        z-index: 1;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding-left: 2.4rem;
+    }
+
+    &__description h1{
+        font-family: $avenir-black;
+        color: $white-color;
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+        display: flex;
+        align-items: center;
+    }
+
+    &__description h1 img{
+        margin-left: 0.8rem;
+        cursor: pointer;
+    }
+
+    &__description p{
+        color: $grey-color;
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+    }
+
+    &__controls{
+        display: flex;
+        justify-content: center;
+
+        & > *:not(:last-child){
+            margin-right: 3.2rem;
+        }
+    }
+
+    &__play{
+        width: 3.6rem;
+        height: 3.6rem;
+        cursor: pointer;
+    }
+
+    &__skip{
+        cursor: pointer;
+    }
+
+    &__skip--next{
+        transform: rotate(180deg);
+    }
+
+    &__timing{
+        display: flex;
+        align-items: center;
+        line-height: 2.2rem;
+        font-family: $avenir-roman;
+        font-size: 1.4rem;
+        color: $grey-color;
+        margin-top: .4rem;
+    }
+
+    &__timing > *:not(:last-child){
+        margin-right: .7rem;
+    }
+
+    &__progress{
+        background-color: rgba($color: $white-color, $alpha: 0.2);
+        width: 49.6rem;
+        height: .6rem;
+        border-radius: .5rem;
+
+        .progress-bar{
+            background-color: inherit;
+            width: 21.6rem;
+            height: 100%;
+            border-radius: .5rem;
+        }
+    }
+
+    
+}

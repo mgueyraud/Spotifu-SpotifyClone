@@ -1,0 +1,25 @@
+.search{
+    position: relative;
+
+    img{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0.8rem;
+    }
+
+    &__input{
+        font-family: inherit;
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+        padding: 0.4rem 0;
+        padding-left: 3.2rem;
+        border-radius: 7rem;
+        outline: none;
+        border: none;
+    }
+
+    &__input::placeholder{
+        color: $secondary-color;
+    }
+}

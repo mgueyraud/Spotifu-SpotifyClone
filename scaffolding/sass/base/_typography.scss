@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'AvenirHeavy';
+    src: url('../fonts/Metropolis-SemiBold.woff2') format('woff2'),
+        url('../fonts/Metropolis-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'AvenirMedium';
+    src: url('../fonts/Metropolis-Medium.woff2') format('woff2'),
+        url('../fonts/Metropolis-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'AvenirBlack';
+    src: url('../fonts/Metropolis-Bold.woff2') format('woff2'),
+        url('../fonts/Metropolis-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'AvenirRoman';
+    src: url('../fonts/Metropolis-Regular.woff2') format('woff2'),
+        url('../fonts/Metropolis-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

@@ -1,0 +1,66 @@
+.aside{
+    padding: 4rem 2.4rem 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+
+    &__item{
+        margin-top: 4rem;
+    }
+
+    &__nav{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__nav a svg{
+        width: 2.4rem;
+        height: 2.4rem;
+        margin-right: 0.8rem;
+    }
+
+    &__nav a{
+        padding: 0.8rem 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: $grey-color;
+        font-family: $avenir-medium;
+        font-size: 1.4rem;
+    }
+
+    &__nav a svg{
+        fill: $grey-color;
+    }
+
+    &__nav a.-is-active{
+
+        color: $white-color;
+
+        svg{
+            fill: $white-color;
+        }
+
+        &::before{
+            content: "";
+            width: 0.4rem;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: calc(-2.4rem);
+            background-color: $primary-color;
+        }
+    }
+
+    &__playing{
+        width: calc(100% + 4.8rem);
+        position: relative;
+        left: -2.4rem;
+    }
+
+    .list-wrapper{
+        flex: 1;
+    }
+}

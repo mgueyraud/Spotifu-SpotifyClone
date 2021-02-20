@@ -1,0 +1,54 @@
+.carousel{
+
+    width: 100%;
+
+    &__header{
+        display: flex;
+        padding-bottom: 7px;
+        border-bottom: 1px solid rgba($color: $grey-color, $alpha: 0.2);
+    }
+
+    &__header h3{
+        color: white;
+        font-family: $avenir-heavy;
+        font-size: 1.6rem;
+    }
+
+    &__controls{
+        display: block;
+    }
+
+    &__controls svg{
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+
+    &__controls--prev{
+        margin-left: auto;
+        margin-right: 2.4rem;
+    }
+
+    &__controls--next svg{
+        transform: rotate(180deg);
+    }
+
+    &__content-overflowed{
+        width: calc(100% + 3.2rem);
+    }
+
+    &__content{
+        margin-top: 2.4rem;
+        display: flex;
+        max-width: 100%;
+        overflow-x: scroll;
+        
+        & > *{
+            margin-right: 1.6rem;
+        }
+
+        & > *{
+            flex: 0 0 auto;
+            flex-flow: row wrap;
+        }
+    }
+}

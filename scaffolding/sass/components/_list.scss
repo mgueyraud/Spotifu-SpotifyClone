@@ -1,0 +1,25 @@
+.list-wrapper{
+    color: $grey-color;
+    overflow-y: auto;
+
+    h4{
+        font-family: $avenir-roman;
+        font-size: 1.4rem;
+    }
+
+    .list{
+        list-style: none;
+    }
+
+    .list li{
+        margin: 0.8rem 0;
+    }
+
+    .list li a{
+        text-decoration: none;
+        color: inherit;
+        font-family: $avenir-black;
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+    }
+}
