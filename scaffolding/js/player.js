@@ -43,22 +43,18 @@ class Player {
     }
 
     play(music){
+        //Si nos pasa una musica como parametro
         if(music){
             this.currentMusic = music;
             this.setMusic(music);
-            this.$playerEl.onloadedmetadata = () => {
-                this.$durationEl.textContent = `${convertSecondstoValidFormat(this.$playerEl.duration)}`;
-                this.$playerEl.play();
-                this.isPlaying = true;
-                this.$playButtonEl.src = this.$playButtonEl.dataset.pause;      
-                this.startProgress();
-            };
-            return;
         }
+
         this.$playButtonEl.src = this.$playButtonEl.dataset.pause;
         this.$playerEl.play();
         this.isPlaying = true;
-        this.$durationEl.textContent = `${convertSecondstoValidFormat(this.$playerEl.duration)}`;
+        this.$playerEl.onloadedmetadata = () => {
+            this.$durationEl.textContent = `${convertSecondstoValidFormat(this.$playerEl.duration)}`;
+        };
         this.startProgress();
     }
 

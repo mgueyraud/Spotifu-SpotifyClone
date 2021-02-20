@@ -152,7 +152,7 @@
                 <div class="carousel__content-overflowed">
                     <div class="carousel__content">
                         <article class="card-music">
-                            <figure class="card-music__img">
+                            <figure class="card-music__img js-play-bichota">
                                 <img src="./assets/img/placeholders/placeholder-cover--karolG.png" alt="Karol G Cover">
                                 <div class="card-music__img-hover">
                                     <img src="./assets/img/icons/play--hover.png" alt="Play Icon">
@@ -167,7 +167,7 @@
                             <p>2,661,830 seguidores</p>
                         </article>
                         <article class="card-music">
-                            <figure class="card-music__img">
+                            <figure class="card-music__img js-play-hawai">
                                 <img src="./assets/img/placeholders/placeholder-cover--maluma.png" alt="Karol G Cover">
                                 <div class="card-music__img-hover">
                                     <img src="./assets/img/icons/play--hover.png" alt="Play Icon">
@@ -182,7 +182,7 @@
                             <p>2,661,830 seguidores</p>
                         </article>
                         <article class="card-music">
-                            <figure class="card-music__img">
+                            <figure class="card-music__img js-play-dakiti">
                                 <img src="./assets/img/placeholders/placeholder-cover--badbunny.png" alt="Karol G Cover">
                                 <div class="card-music__img-hover">
                                     <img src="./assets/img/icons/play--hover.png" alt="Play Icon">
@@ -197,7 +197,7 @@
                             <p>2,661,830 seguidores</p>
                         </article>
                         <article class="card-music">
-                            <figure class="card-music__img">
+                            <figure class="card-music__img js-play-salsa">
                                 <img src="./assets/img/placeholders/placeholder-cover--nosequienes.png" alt="Karol G Cover">
                                 <div class="card-music__img-hover">
                                     <img src="./assets/img/icons/play--hover.png" alt="Play Icon">
@@ -212,7 +212,7 @@
                             <p>2,661,830 seguidores</p>
                         </article>
                         <article class="card-music">
-                            <figure class="card-music__img">
+                            <figure class="card-music__img js-play-jeans">
                                 <img src="./assets/img/placeholders/placeholder-cover--jquiles.png" alt="Karol G Cover">
                                 <div class="card-music__img-hover">
                                     <img src="./assets/img/icons/play--hover.png" alt="Play Icon">
@@ -967,6 +967,7 @@
     </div>
 
     <script src="./assets/js/player.min.js"></script>
+    <script src="./assets/js/carousel.min.js"></script>
 
     <script>
         let $navElements = document.querySelectorAll(".js-nav a");
@@ -996,8 +997,59 @@
             document.querySelector(".js-subtitle").textContent = "Mora, Jhay Cortez";
             document.querySelector(".js-image-cover").src = "./assets/img/placeholders/placeholder-cover--jhaycortez.png";
         });
-        
-        // player.play();
+
+        document.querySelector(".js-play-bichota").addEventListener("click", e => {
+            e.preventDefault();
+            player.play("./assets/music/bichota.mp3");
+            document.querySelector(".js-title").textContent = "Bichota";
+            document.querySelector(".js-subtitle").textContent = "Karol G";
+            document.querySelector(".js-image-cover").src = "./assets/img/placeholders/placeholder-cover--karolG.png";
+        });
+
+        document.querySelector(".js-play-jeans").addEventListener("click", e => {
+            e.preventDefault();
+            player.play("./assets/music/jeans.mp3");
+            document.querySelector(".js-title").textContent = "Jeans";
+            document.querySelector(".js-subtitle").textContent = "J Quiles";
+            document.querySelector(".js-image-cover").src = "./assets/img/placeholders/placeholder-cover--jquiles.png";
+        });
+
+        document.querySelector(".js-play-hawai").addEventListener("click", e => {
+            e.preventDefault();
+            player.play("./assets/music/hawai.mp3");
+            document.querySelector(".js-title").textContent = "Hawai";
+            document.querySelector(".js-subtitle").textContent = "Maluma";
+            document.querySelector(".js-image-cover").src = "./assets/img/placeholders/placeholder-cover--maluma.png";
+        });
+
+        document.querySelector(".js-play-dakiti").addEventListener("click", e => {
+            e.preventDefault();
+            player.play("./assets/music/dakiti.mp3");
+            document.querySelector(".js-title").textContent = "Dakiti";
+            document.querySelector(".js-subtitle").textContent = "Bad Bunny, Jhay Cortez";
+            document.querySelector(".js-image-cover").src = "./assets/img/placeholders/placeholder-cover--badbunny.png";
+        });
+
+        document.querySelector(".js-play-salsa").addEventListener("click", e => {
+            e.preventDefault();
+            player.play("./assets/music/salsa.mp3");
+            document.querySelector(".js-title").textContent = "Salsa";
+            document.querySelector(".js-subtitle").textContent = "No se quien es";
+            document.querySelector(".js-image-cover").src = "./assets/img/placeholders/placeholder-cover--nosequienes.png";
+        });
+
+
+        //Carousels
+        const $carousels = document.querySelectorAll(".carousel");
+
+        Array.prototype.forEach.call($carousels, carousel => {
+            Carousel({
+                wrapper: carousel,
+                el: ".carousel__content",
+                prev: ".carousel__controls--prev",
+                next: ".carousel__controls--next",
+            });
+        });
     </script>
 
 </body>
