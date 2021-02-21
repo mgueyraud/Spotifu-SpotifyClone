@@ -1,8 +1,8 @@
-function CarouselS({ wrapper, el, prev, next }) {
+function Carousel({ wrapper, el, prev, next }) {
     const $wrapper = wrapper;
-    const $el = wrapper.querySelector(el);
-    const $prev = wrapper.querySelector(prev);
-    const $next = wrapper.querySelector(next);
+    const $el = $wrapper.querySelector(el);
+    const $prev = $wrapper.querySelector(prev);
+    const $next = $wrapper.querySelector(next);
     const widthChild = $el.children[0].getBoundingClientRect().width;
 
     //Click prev
@@ -23,3 +23,5 @@ function CarouselS({ wrapper, el, prev, next }) {
         });
     });
 }
+
+export default Carousel;

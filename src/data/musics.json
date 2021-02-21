@@ -1,0 +1,9 @@
+[
+    {
+        "id": 1,
+        "musicTitle": "Bichota",
+        "artists": "Karol G",
+        "src": "./assets/music/bichota.mp3",
+        "coverImg": "./assets/img/placeholders/placeholder-cover--karolG.png"
+    }
+]
