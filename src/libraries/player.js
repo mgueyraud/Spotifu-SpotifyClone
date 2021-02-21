@@ -1,14 +1,4 @@
-function convertSecondstoValidFormat(time) {
-
-    let dateObj = new Date(time * 1000);
-    const minutes = dateObj.getUTCMinutes();
-    const seconds = dateObj.getSeconds();
-
-    const timeString = minutes.toString().padStart(2, '0')
-        + ':' + seconds.toString().padStart(2, '0');
-
-    return timeString;
-}
+import { convertSecondstoValidFormat } from "./utils.js";
 
 class Player {
 
@@ -48,13 +38,9 @@ class Player {
             this.currentMusic = music;
             this.setMusic(music);
         }
-
         this.$playButtonEl.src = this.$playButtonEl.dataset.pause;
         this.$playerEl.play();
         this.isPlaying = true;
-        this.$playerEl.onloadedmetadata = () => {
-            this.$durationEl.textContent = `${convertSecondstoValidFormat(this.$playerEl.duration)}`;
-        };
         this.startProgress();
     }
 
@@ -79,6 +65,9 @@ class Player {
 
     setMusic(music) {
         this.$playerEl.src = music;
+        this.$playerEl.onloadedmetadata = () => {
+            this.$durationEl.textContent = `${convertSecondstoValidFormat(this.$playerEl.duration)}`;
+        };
     }
 
     init() {

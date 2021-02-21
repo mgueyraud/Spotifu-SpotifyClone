@@ -3,7 +3,7 @@ import Player from "./container/Player";
 import Main from "./container/Main";
 import Home from "./pages/Home";
 import { Switch, Route } from "react-router-dom";
-import Playlist from "./pages/Playlist";
+import Album from "./pages/Album";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <Aside />
       <Main>
         <Switch>
-          <Route path="/play" component={Playlist} exact />
+          <Route path="/play" component={Album} exact />
           <Route path="/" component={Home} exact />
           {/*ERROR COMPONENT */}
         </Switch>

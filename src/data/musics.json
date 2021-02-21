@@ -4,6 +4,53 @@
         "musicTitle": "Bichota",
         "artists": "Karol G",
         "src": "./assets/music/bichota.mp3",
+        "duration": "02:56",
+        "isPlaying": false,
         "coverImg": "./assets/img/placeholders/placeholder-cover--karolG.png"
+    },
+    {
+        "id": 2,
+        "musicTitle": "Hawai",
+        "artists": "Maluma",
+        "src": "./assets/music/hawai.mp3",
+        "duration": "04:18",
+        "isPlaying": false,
+        "coverImg": "./assets/img/placeholders/placeholder-cover--maluma.png"
+    },
+    {
+        "id": 3,
+        "musicTitle": "Dakiti",
+        "artists": "Bad Bunny, Jhay Cortez",
+        "src": "./assets/music/dakiti.mp3",
+        "duration": "03:34",
+        "isPlaying": false,
+        "coverImg": "./assets/img/placeholders/placeholder-cover--badbunny.png"
+    },
+    {
+        "id": 4,
+        "musicTitle": "Salsa",
+        "artists": "No se quien es",
+        "src": "./assets/music/salsa.mp3",
+        "duration": "02:56",
+        "isPlaying": false,
+        "coverImg": "./assets/img/placeholders/placeholder-cover--nosequienes.png"
+    },
+    {
+        "id": 5,
+        "musicTitle": "Jeans",
+        "artists": "J Quiles",
+        "src": "./assets/music/jeans.mp3",
+        "duration": "03:14",
+        "isPlaying": false,
+        "coverImg": "./assets/img/placeholders/placeholder-cover--jquiles.png"
+    },
+    {
+        "id": 6,
+        "musicTitle": "Pegate Remix",
+        "artists": "Mora, Jhay Cortez",
+        "src": "./assets/music/pegate remix.mp3",
+        "duration": "02:56",
+        "isPlaying": false,
+        "coverImg": "./assets/img/placeholders/placeholder-cover--jhaycortez.png"
     }
 ]

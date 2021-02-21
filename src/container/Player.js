@@ -2,11 +2,18 @@
 import PlayerDescription from "../components/Player/PlayerDescription";
 import PlayerL from "../libraries/player";
 import { useEffect } from "react";
+import PlayerControls from "../components/Player/PlayerControls";
+import PlayerTiming from "../components/Player/PlayerTiming";
+import { useSelector } from "react-redux";
 
 const Player = () => {
 
+    let player = null;
+
+    const playerState = useSelector(state => state.player);
+
     useEffect(() => {
-        const player = new PlayerL({
+        player = new PlayerL({
             el: ".js-audio",
             playButton: ".js-play-button",
             currentMusic: "./assets/music/dakiti.mp3",
@@ -14,34 +21,24 @@ const Player = () => {
             duration: ".js-duration",
             currentTime: ".js-current-time"
         });
-    }, []);
+    });
+
+    useEffect(() => {
+        if (playerState) {
+            player.play(playerState.src);
+        }
+    }, [playerState]);
 
     return (
         <footer className="appContainer__player player-wrapper">
             <PlayerDescription
-                title="Dakiti"
-                artists="Jhay Cortez, Bad bunny"
+                title={playerState.musicTitle}
+                artists={playerState.artists}
             />
             <div className="player">
                 <audio src="" className="js-audio" preload="metadata"></audio>
-                <div className="player__controls">
-                    <img src="./assets/img/icons/skip.svg" alt="Skip Prev Icon" className="player__skip player__skip--prev" />
-                    <img src="./assets/img/icons/play--hover.png"
-                        data-pause="./assets/img/icons/pause.png"
-                        data-play="./assets/img/icons/play--hover.png"
-                        alt="Play Icon"
-                        className="player__play js-play-button" />
-                    <img src="./assets/img/icons/skip.svg" alt="Skip Next Icon" className="player__skip player__skip--next" />
-                </div>
-                <div className="player__timing">
-                    <span className="js-current-time">00:00</span>
-                    <div className="player__progress js-progress">
-                        <div className="progress-bar">
-
-                        </div>
-                    </div>
-                    <span className="js-duration">00:00</span>
-                </div>
+                <PlayerControls />
+                <PlayerTiming />
             </div>
         </footer>
     );
